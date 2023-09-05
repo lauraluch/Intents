@@ -1,5 +1,6 @@
 package com.laura.intents
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.laura.intents.databinding.ActivityMainBinding
@@ -12,6 +13,11 @@ class MainActivity : AppCompatActivity() {
         amb = ActivityMainBinding.inflate(layoutInflater)
         setContentView(amb.root)
         supportActionBar?.subtitle = "MainActivity"
+
+        amb.entrarParametroBt.setOnClickListener {
+            val parametroIntent = Intent(this, ParametroActivity::class.java)
+            startActivity(parametroIntent)
+        }
     }
 
 
